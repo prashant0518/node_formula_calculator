@@ -20,9 +20,9 @@ const recursion = (data) => {
 
     for (let i = 0; i < data.length; i++) {
         if (typeof data[i].value === 'string' && /{{data.[0-9a-z]+}}/gi.test(data[i].value)) {
-            const a = data[i].value.split('}')[0].split('.')[1]
-            const xyz = mainData.find((el) => el.key === a)
-            const val = recursion([xyz])
+            const key = data[i].value.split('}')[0].split('.')[1]
+            const obj = mainData.find((el) => el.key === key)
+            const val = recursion([obj])
             const keyValue = val[0].key
             const newStr = data[i].value.replace(`{{data.${keyValue}}}`, val[0].value)
             data[i].value = eval(newStr)
