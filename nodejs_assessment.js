@@ -1,8 +1,5 @@
 const mainData = [
-    {
-        key: "age",
-        value: 17
-    },
+
     {
         key: 'eligibility',
         value: '{{data.adult}} > 20'
@@ -12,9 +9,10 @@ const mainData = [
         value: '{{data.age}} + 10'
     },
     {
-        key:'salary',
-        value: '{{data.adult}} * 100'
+        key: "age",
+        value: 17
     }
+
 ]
 
 const recursion = (data) => {
